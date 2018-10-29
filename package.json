@@ -1,0 +1,21 @@
+{
+  "name": "mongo_express",
+  "version": "1.0.0",
+  "description": "Tutorial for mongo and express, using mlab",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon server.js"
+  },
+  "author": "Sitora Urazova",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mongoose": "^5.3.7",
+    "nodemon": "^1.18.5"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.5"
+  }
+}
