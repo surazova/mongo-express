@@ -6,9 +6,7 @@ const UserSchema = new Schema ({
     name: {
         type: String, 
         require: true,
-    },
-    age: {
-        type: Number,
+        unique: true,
     },
     password: {
         type: String, 
