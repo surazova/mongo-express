@@ -65,37 +65,37 @@ const name = req.params.name //use destructuring {name, password, avatar} and th
 
 
 
-router.put('/:name', (req, res) => { //a put works similerly to a post, you still need parameters. 
-  const name = req.params.name
-  User.findOne({name})
-  .then(user => {
-    if(!user) {
-      return res.status(409).json({message: `user ${name} already exists`})
-    } else {  //do I need an else? 
-  if(user => {
-  const {name, password, avatar} = req.body;
-  const newUser = new User({
-    name, 
-    password,
-    avatar
+// router.put('/:name', (req, res) => { //a put works similerly to a post, you still need parameters. 
+//   const name = req.params.name
+//   User.findOne({name})
+//   .then(user => {
+//     if(!user) {
+//       return res.status(409).json({message: `user ${name} already exists`})
+//     } else {  //do I need an else? 
+//   if(user => {
+//   const {name, password, avatar} = req.body;
+//   const newUser = new User({
+//     name, 
+//     password,
+//     avatar
   
-  }
-  )
-    newUser.save()  //asynchronous method
-    .then(user => res.status(201).json(user))  //when you save, you get the id of the new user, and the date 
-    .catch(err => {
-      res.status(500)
-        .json({
-          status: "error", 
-          message: err
-        });
-    })
-})
+//   }
+//   )
+//     newUser.save()  //asynchronous method
+//     .then(user => res.status(201).json(user))  //when you save, you get the id of the new user, and the date 
+//     .catch(err => {
+//       res.status(500)
+//         .json({
+//           status: "error", 
+//           message: err
+//         });
+//     })
+// })
 
-  //   User.findOneAndUpdate({name})
-  //     .then(() => res.status(204).json({message: `user ${name} successfully updated`}))
-  //     .catch(() => res.status(500).json(err));
+//   //   User.findOneAndUpdate({name})
+//   //     .then(() => res.status(204).json({message: `user ${name} successfully updated`}))
+//   //     .catch(() => res.status(500).json(err));
   
-  // })
+//   // })
 
 module.exports = router;
