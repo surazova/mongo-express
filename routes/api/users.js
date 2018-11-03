@@ -97,5 +97,21 @@ const name = req.params.name //use destructuring {name, password, avatar} and th
 //   //     .catch(() => res.status(500).json(err));
   
 //   // })
+router.put('/:name', (req, res) => {
+    const { name } = req.params;
+    const { password, avatar } = req.body;
+    
+    User.findOne({ name })
+        .then(user => {
+            if(user) {
+                User.findOneAndUpdate(
+                    {name}, 
+                    {$set: {password, avatar}}, 
+                    {new : true}
+                    ).then(updatedUser => res.json(updatedUser))
+            }
+        })
+    
+})
 
 module.exports = router;
